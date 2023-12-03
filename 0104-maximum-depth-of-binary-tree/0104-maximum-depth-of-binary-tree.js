@@ -11,9 +11,9 @@
  * @return {number}
  */
 var maxDepth = function(root) {
+    
     let depth = 1
     const dfs = (root, level)=>{
-        console.log(root,"--",level)
         // in case it reached a new level, to not overwrite with a less number 
         if(level > depth)
             depth = level
@@ -25,7 +25,6 @@ var maxDepth = function(root) {
          dfs(root.right,level = level)
     }
     dfs(root,depth)
-    console.log(depth)
-
+    // -1 because it reaches the null children and count it
    return depth-1
 };
